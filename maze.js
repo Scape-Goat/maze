@@ -35,6 +35,14 @@ for(let row = 0; row < map.length; row++) {
         cellDiv.className = "cell " + cellClass;
 
         rowDiv.appendChild(cellDiv);
+
+        if(cellClass == "F" || cellClass == "S"){
+            cellDiv.textContent = cellClass;
+            if(cellClass = "S"){
+                avatarRow = row;
+                avatarCol = i;
+            }
+        }
     }
 
     mazeDiv.appendChild(rowDiv);
@@ -63,10 +71,10 @@ function move(dRow, dCol) {
 
     // Using avatarRow and dRow, compute destRow (where the player should move
     // vertically). You'll need to replace "undefined" to do so.
-    const destRow = undefined; 
+    const destRow = avatarRow+dRow; 
     // Using avatarCOl and dCol, compute destCol (where the player should move
     // vertically). You'll need to replace "undefined" to do so.
-    const destCol = undefined;
+    const destCol = avatarCol+dCol;
     const destCell = map[destRow][destCol];
 
     // Check that it is within the bounds of the map, and not a wall.
@@ -74,6 +82,8 @@ function move(dRow, dCol) {
         // Now that you know the player's destination, you need to actually
         // update "avatarRow" and "avatarCol". Add statements to update those
         // two variables below, before "redrawAvatar()".
+
+        
         redrawAvatar();
     }
 
