@@ -82,7 +82,8 @@ function move(dRow, dCol) {
         // Now that you know the player's destination, you need to actually
         // update "avatarRow" and "avatarCol". Add statements to update those
         // two variables below, before "redrawAvatar()".
-
+        avatarRow = destRow;
+        avatarCol = destCol;
         
         redrawAvatar();
     }
@@ -108,6 +109,8 @@ document.addEventListener('keydown', (event) => {
 
     // Write some logic to check the value of "event.key" and call "move()"
     // with the proper arguments.
+
+   
 });
 
 youWonDiv.addEventListener("click", () => location.reload());
