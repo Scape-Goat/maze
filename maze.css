@@ -12,7 +12,7 @@ body {
     height: 33px; 
     background: url('chok.png'); 
     background-size: contain; 
-    transition: all 0.1s;
+    transition: all .5s;
 }
 
 #youWonDiv {
@@ -25,6 +25,7 @@ body {
     background: lightgray; 
     text-align: center; 
     opacity: 0.9;
+    border-radius: 50pt
 }
 
 .hidden {
@@ -42,6 +43,13 @@ body {
     text-align: center;
 }
 
+#mazeDiv{
+    background: linear-gradient(to right,red,orange , yellow,orange,red);
+    width: fit-content;
+}
+
 .W {
-    background: #00356b;
+    background: linear-gradient(to bottom right,firebrick,maroon,firebrick,crimson,maroon);
+    border-radius: 5pt;
+   
 }

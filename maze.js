@@ -1,7 +1,7 @@
 const mazeDiv = document.getElementById("mazeDiv");
 const avatar = document.getElementById("avatar");
 const youWonDiv = document.getElementById("youWonDiv")
-
+const theme = document.getElementById("theme");
 // Size of the squares in the grid, in pixels.
 const delta = 33;
 
@@ -82,21 +82,30 @@ function move(dRow, dCol) {
 
 function checkForWin() {
     if(map[avatarRow][avatarCol] === "F") {
+        document.getElementById("theme").pause();
         youWonDiv.classList.remove("hidden");
         const audio = new Audio('wow.mp3');
         audio.play();
     }
 }
+var currentDegrees = 0;
 
 document.addEventListener('keydown', (event) => {
     // STEP 2 -----------------------------------------------------------------/
-    console.log(event.key);
     // "move" takes 2 arguments: a row offset, and a column offset.  For example
     // move(1, 0) would move the player 1 square down and 0 squares to the
     // right.
 
     // Write some logic to check the value of "event.key" and call "move()"
     // with the proper arguments.
+    theme.volume = .2;
+    theme.play()
+
+
+
+    document.getElementById("avatar").style.transform = "rotate("+currentDegrees+"deg)";
+    currentDegrees-=360;
+    
     switch(event.key){
         case "ArrowUp":
         case "w": move(-1,0); break;
